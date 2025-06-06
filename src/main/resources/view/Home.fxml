@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="647.0" prefWidth="1147.0" style="-fx-background-color: #2B1B17;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeViewController">
+   <children>
+      <AnchorPane fx:id="panelHome" layoutX="275.0" layoutY="1.0" prefHeight="646.0" prefWidth="872.0" style="-fx-background-color: #f7f1e3;">
+         <children>
+            <ImageView fitHeight="646.0" fitWidth="872.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="646.0" fitWidth="925.0" opacity="0.3" pickOnBounds="true">
+               <image>
+                  <Image url="@../image/b.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <JFXButton layoutX="27.0" layoutY="243.0" onAction="#btnDashboardOnAction" prefHeight="29.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Home" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/homeIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-0.98" hue="0.06" saturation="0.06" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="28.0" layoutY="297.0" onAction="#btnProcustManagementOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Product Management" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/productsIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="29.0" layoutY="406.0" onAction="#btnCustomerManagementOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Customer Management" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="33.0" layoutY="511.0" onAction="#btnOrderManagementOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Order History" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/orderHistoryIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="30.0" layoutY="352.0" onAction="#btnEmployeeManagementOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Employee Management" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="19.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/employeeIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="564.0" onAction="#btnReportsOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Reports" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/reposrtsIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="32.0" layoutY="458.0" onAction="#btnSupplierManagementOnAction" prefHeight="31.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Supplier Management" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/supplierIcon.png" />
+               </image>
+               <effect>
+                  <ColorAdjust brightness="-1.0" />
+               </effect>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="207.0" fitWidth="226.0" layoutX="24.0" layoutY="16.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/Logo1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="103.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../colthify-final-project/wearzio-javaFx/src/main/resources/image" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="41.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/customersIcon.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="-1.0" />
+         </effect>
+      </ImageView>
+   </children>
+</AnchorPane>

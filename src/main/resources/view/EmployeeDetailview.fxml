@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2B1B17; -fx-background-radius: 0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmployeeDetailController">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="664.0" opacity="0.4" pickOnBounds="true">
+         <image>
+            <Image url="@../image/addupdate.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <!-- Title Label -->
+      <Label layoutX="170.0" layoutY="30.0" prefHeight="50.0" prefWidth="300.0" text="Employee Details" textFill="#D4A017">
+         <font>
+            <Font name="Bodoni MT" size="36.0" />
+         </font>
+         <style>-fx-alignment: center; -fx-background-color: rgba(43, 27, 23, 0.5); -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2);</style>
+      </Label>
+
+      <!-- ID Field -->
+      <JFXTextField fx:id="txtid" alignment="CENTER" focusColor="#D4A017" layoutX="142.0" layoutY="113.0" prefHeight="40.0" prefWidth="360.0" promptText="Employee ID" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+         <style>-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);</style>
+      </JFXTextField>
+
+      <!-- Name Field -->
+      <JFXTextField fx:id="txtName" alignment="CENTER" focusColor="#D4A017" layoutX="142.0" layoutY="163.0" prefHeight="40.0" prefWidth="360.0" promptText="Full Name" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+         <style>-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);</style>
+      </JFXTextField>
+
+      <!-- Email Field -->
+      <JFXTextField fx:id="txtEmail" alignment="CENTER" focusColor="#D4A017" layoutX="142.0" layoutY="213.0" prefHeight="40.0" prefWidth="360.0" promptText="Email Address" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+         <style>-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);</style>
+      </JFXTextField>
+
+      <!-- Job Role Field -->
+      <JFXTextField fx:id="txtJobrole" alignment="CENTER" focusColor="#D4A017" layoutX="142.0" layoutY="263.0" prefHeight="40.0" prefWidth="360.0" promptText="Job Role" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+         <style>-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);</style>
+      </JFXTextField>
+
+      <!-- Update Button -->
+      <JFXButton layoutX="125.0" layoutY="348.0" onAction="#btnUpdate" prefHeight="40.0" prefWidth="160.0" text="Update Employee" textFill="#E6D7C7">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <style>-fx-background-color: #4A372F; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2); -fx-cursor: hand;</style>
+      </JFXButton>
+
+      <!-- Delete Button -->
+      <JFXButton layoutX="364.0" layoutY="348.0" onAction="#btnDelete" prefHeight="40.0" prefWidth="160.0" text="Delete Employee" textFill="#E6D7C7">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+         <style>-fx-background-color: #4A372F; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2); -fx-cursor: hand;</style>
+      </JFXButton>
+   </children>
+</AnchorPane>
