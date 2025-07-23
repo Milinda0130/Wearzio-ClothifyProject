@@ -25,14 +25,14 @@ public class HomeViewController {
     @FXML
     void btnEmployeeManagementOnAction(ActionEvent event) {
         AnchorPane anchorPane = null;
-          try {
+        try {
             anchorPane = new FXMLLoader().load(getClass().getResource("../view/ManageEmployeeView.fxml"));
             panelHome.getChildren().clear();
             panelHome.getChildren().add(anchorPane);
-        } catch (IOException e) {
+        } catch (
+                IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @FXML

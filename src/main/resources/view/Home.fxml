@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,6 +18,21 @@
                   <Image url="@../image/b.jpg" />
                </image>
             </ImageView>
+            <Label layoutX="214.0" layoutY="185.0" prefHeight="79.0" prefWidth="299.0" text="Welcome to" textAlignment="CENTER" textFill="#2b1b17">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+            </Label>
+            <Label layoutX="312.0" layoutY="282.0" prefHeight="118.0" prefWidth="421.0" text=" WEARZIO " textAlignment="CENTER" textFill="#2b1b17">
+               <font>
+                  <Font name="System Bold Italic" size="80.0" />
+               </font>
+            </Label>
+            <Label layoutX="224.0" layoutY="406.0" prefHeight="79.0" prefWidth="405.0" text="Clothing Store" textAlignment="CENTER" textFill="#2b1b17">
+               <font>
+                  <Font name="System Bold Italic" size="48.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
       <JFXButton layoutX="27.0" layoutY="243.0" onAction="#btnDashboardOnAction" prefHeight="29.0" prefWidth="216.0" style="-fx-background-color: #DEB887;" text="   Home" textFill="#2b1b17">
          <font>

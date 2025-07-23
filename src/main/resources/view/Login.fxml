@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="545.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <ImageView fitHeight="592.0" fitWidth="657.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/signup.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="73.0" layoutY="28.0" prefHeight="45.0" prefWidth="206.0" text="Welcome To" textFill="#4a372f">
+         <font>
+            <Font name="Bodoni MT" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="224.0" prefHeight="17.0" prefWidth="228.0" text="Enter your details to access your account" />
+      <Label layoutX="26.0" layoutY="261.0" prefHeight="16.0" prefWidth="34.0" text="Email" />
+      <TextField fx:id="txtLoginEmail" layoutX="26.0" layoutY="281.0" prefHeight="37.0" prefWidth="290.0" promptText="Enter your email" />
+      <PasswordField fx:id="txtLoginPassword" layoutX="27.0" layoutY="353.0" prefHeight="37.0" prefWidth="290.0" promptText="Enter your password" />
+      <JFXButton fx:id="btnLogin" layoutX="26.0" layoutY="434.0" onAction="#btnLogInOnAction" prefHeight="37.0" prefWidth="290.0" style="-fx-background-color: #2b1b17;" stylesheets="@../../../../../../clothi/src/main/resources/css/styles.css" text="Log In" textFill="BURLYWOOD">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblForgitPassword" layoutX="218.0" layoutY="402.0" onMouseEntered="#lblForgotPasswordMouseEntered" onMouseExited="#lblForgotPasswordMouseExited" onMousePressed="#lblForgotPasswordOnAction" prefHeight="17.0" prefWidth="99.0" text="Forgot Password ?" />
+      <Label layoutX="27.0" layoutY="333.0" prefHeight="16.0" prefWidth="59.0" text="Password" />
+      <ImageView fitHeight="206.0" fitWidth="216.0" layoutX="68.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Logo1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
