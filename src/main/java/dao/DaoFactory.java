@@ -24,6 +24,8 @@ public class DaoFactory {
                 return (T) ProductDaoImpl.getInstance();
             case EMPLOYEE:
                 return (T) new EmployeeDaoImpl();
+            case USER:
+                return (T) new EmployeeDaoImpl();
 
         }
         return null;

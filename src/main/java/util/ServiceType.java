@@ -2,5 +2,5 @@ package util;
 
 public enum ServiceType {
 
-    EMPLOYEE,PRODUCT
+    EMPLOYEE,PRODUCT,CUSTOMER,ORDERPRODUCT,ORDERS,SUPPLIER,USER;
 }

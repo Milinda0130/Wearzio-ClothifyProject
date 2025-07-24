@@ -2,21 +2,14 @@ package controller;
 
 import com.jfoenix.controls.JFXTextField;
 import dto.Employee;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import service.ServiceFactory;
 import service.custom.EmployeeService;
 import util.ServiceType;
 
-import java.net.URL;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
-
-public class EmployeeController  {
+public class AddEmployeeController {
 
     @FXML
     private JFXTextField txtEmail;
@@ -45,7 +38,7 @@ public class EmployeeController  {
 
 
         Boolean b = employeeService.addEmployee(newEmployee);
-        ;
+
 
         if (b==true) {
             new Alert(Alert.AlertType.INFORMATION, "Customer Added Successfully!").show();

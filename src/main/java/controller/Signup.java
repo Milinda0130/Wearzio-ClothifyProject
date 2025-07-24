@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import service.custom.LoginSignupService;
+import service.custom.impl.LoginSignupServiceImpl;
 
 public class Signup {
 
@@ -27,10 +29,11 @@ public class Signup {
 
     @FXML
     private TextField txtname;
+    private final LoginSignupService userService = new LoginSignupServiceImpl();
 
     @FXML
     void btnsignupOnAction(ActionEvent event) {
-
+      
     }
 
     @FXML
