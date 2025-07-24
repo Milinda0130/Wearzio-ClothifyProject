@@ -3,6 +3,7 @@ package controller;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -29,11 +30,25 @@ public class Signup {
 
     @FXML
     private TextField txtname;
-    private final LoginSignupService userService = new LoginSignupServiceImpl();
 
     @FXML
     void btnsignupOnAction(ActionEvent event) {
-      
+        if (txtname.getText().trim().isEmpty() || txtEmail.getText().trim().isEmpty() || txtPassword.getText().trim().isEmpty() || txtConfirmPassword.getText().trim().isEmpty()){
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error: Create User");
+            alert.setHeaderText("All fields must be filled!");
+            alert.show();
+            return;
+        }
+
+        if (!txtPassword.getText().equals(txtConfirmPassword.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error: Password Mismatch");
+            alert.setHeaderText("Passwords do not match!");
+            alert.show();
+            return;
+        }
     }
 
     @FXML

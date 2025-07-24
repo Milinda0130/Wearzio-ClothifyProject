@@ -1,5 +1,6 @@
 package controller;
 
+import dto.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,12 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 public class HomeViewController {
+    private static User currentUser;
+
+    public void setCurrentUser(User currentUser) {
+        this.currentUser = currentUser;
+
+    }
 
     @FXML
     private AnchorPane panelHome;
@@ -21,6 +28,7 @@ public class HomeViewController {
     void btnDashboardOnAction(ActionEvent event) {
 
     }
+
 
     @FXML
     void btnEmployeeManagementOnAction(ActionEvent event) {

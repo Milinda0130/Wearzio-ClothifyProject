@@ -1,11 +1,16 @@
 package service.custom;
 
+import dao.SuperDao;
 import dto.User;
+import service.SuperService;
 
-public interface LoginSignupService {
+public interface LoginSignupService extends SuperService {
 
-    boolean register(User dto);
-    boolean login(String email, String password);
-    boolean updatePassword(String email, String newPassword);
-    boolean sendOtp(String email);
+    User login(String email, String password);
+
+    User updatePassword(String email, String password);
+
+    User getUserById(int id);
+
+    boolean addNewUser(User newUser);
 }
