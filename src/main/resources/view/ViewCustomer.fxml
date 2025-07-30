@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="panelViewCustomer" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewCustomer">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutX="-2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutX="-2.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="682.0" layoutY="125.0" onAction="#btnAddCustomer" prefHeight="48.0" prefWidth="160.0" style="-fx-background-color: #2B1B17;" text="Add Employee" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtSearchCustomer" layoutX="104.0" layoutY="125.0" prefHeight="48.0" prefWidth="421.0" />
+      <JFXButton layoutX="532.0" layoutY="125.0" onAction="#btnSearchCustomer" prefHeight="48.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblCustomer" layoutX="123.0" layoutY="205.0" opacity="0.65" prefHeight="413.0" prefWidth="702.0" style="-fx-control-inner-background: rgba(230, 215, 199, 0.95); -fx-selection-bar: #2B1B17; -fx-selection-bar-text: #E6D7C7; -fx-font-family: 'System'; -fx-font-size: 13; -fx-background-insets: 0; -fx-table-cell-border-color: #2B1B17; -fx-table-header-background: derive(#DEB887, -5%);">
+         <columns>
+            <TableColumn fx:id="colCustomerId" prefWidth="108.0" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Customer ID" />
+            <TableColumn fx:id="colName" prefWidth="205.0" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Customer Name" />
+            <TableColumn fx:id="colMobileNumber" prefWidth="200.0" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Mobile Number" />
+            <TableColumn fx:id="colAddress" prefWidth="188.0" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Address" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="181.0" layoutY="29.0" prefHeight="60.0" prefWidth="525.0" text="Customer Management" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

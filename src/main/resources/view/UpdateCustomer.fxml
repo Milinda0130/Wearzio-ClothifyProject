@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateCustomer">
+   <children>
+      <ImageView fitHeight="480.0" fitWidth="664.0" layoutX="-1.0" layoutY="-1.0" opacity="0.4" pickOnBounds="true">
+         <image>
+            <Image url="@../image/addupdate.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="169.0" layoutY="29.0" prefHeight="50.0" prefWidth="300.0" style="-fx-alignment: center; -fx-background-color: rgba(43, 27, 23, 0.5); -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2);" text="Customer Details" textFill="#D4A017">
+         <font>
+            <Font name="Bodoni MT" size="36.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtid" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="112.0" prefHeight="40.0" prefWidth="360.0" promptText="Customer ID" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="162.0" prefHeight="40.0" prefWidth="360.0" promptText="Name" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmaitxtmobille" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="212.0" prefHeight="40.0" prefWidth="360.0" promptText="Mobile Number" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="262.0" prefHeight="40.0" prefWidth="360.0" promptText="Address" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
+         <font>
+            <Font name="System" size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="124.0" layoutY="347.0" onAction="#btnUpdate" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #4A372F; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2); -fx-cursor: hand;" text="Update Customer" textFill="#E6D7C7">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="363.0" layoutY="347.0" onAction="#btnDelete" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #4A372F; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 2, 2); -fx-cursor: hand;" text="Delete Customer" textFill="#E6D7C7">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

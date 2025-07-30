@@ -31,8 +31,8 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
                 BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
                 textEncryptor.setPassword("ClothifySecureKey");
 
-                String passwordFromDB = resultSet.getString("password");
-                String decryptedPassword = textEncryptor.decrypt(passwordFromDB);
+                String decryptedPassword = resultSet.getString("password");
+//                String decryptedPassword = textEncryptor.decrypt(passwordFromDB);
 
                 if (password.trim().equals(decryptedPassword)) {
                     String query = "SELECT * FROM user WHERE email = ?";
@@ -43,9 +43,10 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
                     if (resultSet2.next()) {
                         return new UserEntity(
                                 resultSet2.getInt("userId"),
-                                resultSet2.getString("name"),
+                                resultSet2.getString("userName"),
                                 resultSet2.getString("email"),
-                                "xxxxx",
+                                resultSet2.getString("password"),
+
                                 resultSet2.getString("role")
                         );
                     }
@@ -103,7 +104,7 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
                         resultSet.getInt("userId"),
                         resultSet.getString("name"),
                         resultSet.getString("email"),
-                        resultSet.getString("password"),
+                        "xxxxx",
                         resultSet.getString("role")
                 );
             }
@@ -117,7 +118,7 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
     @Override
     public boolean saveUser(UserEntity userEntity) {
         if (userEntity != null) {
-            String sql = "INSERT INTO user (name, email, password, role) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO user (userName, email, password, role) VALUES (?, ?, ?, ?)";
             try {
                 PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(sql);
                 statement.setString(1,userEntity.getUserName());

@@ -1,4 +1,7 @@
 package dao.custom;
 
-public interface SuplierDao {
+import dao.CrudDao;
+import entity.SupplierEntity;
+
+public interface SuplierDao extends CrudDao<SupplierEntity, Integer> {
 }

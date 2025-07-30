@@ -12,7 +12,7 @@ public class LoginSignupServiceImpl implements LoginSignupService {
     private static LoginSignupServiceImpl loginSignupServiceImpl;
     private final LoginSignUpDao loginSignupDao;
 
-    private LoginSignupServiceImpl() {
+    public LoginSignupServiceImpl() {
         loginSignupDao = DaoFactory.getInstance().getDao(DaoType.USER);
     }
     public static LoginSignupServiceImpl getInstance() {
@@ -51,6 +51,7 @@ public class LoginSignupServiceImpl implements LoginSignupService {
     public boolean addNewUser(User newUser) {
         if (newUser != null) {
             UserEntity userEntity = new ModelMapper().map(newUser, UserEntity.class);
+            System.out.println(userEntity);
             return loginSignupDao.saveUser(userEntity);
         }
 

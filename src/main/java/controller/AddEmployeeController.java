@@ -9,7 +9,7 @@ import service.ServiceFactory;
 import service.custom.EmployeeService;
 import util.ServiceType;
 
-public class AddEmployeeController {
+public class    AddEmployeeController {
 
     @FXML
     private JFXTextField txtEmail;
@@ -41,11 +41,11 @@ public class AddEmployeeController {
 
 
         if (b==true) {
-            new Alert(Alert.AlertType.INFORMATION, "Customer Added Successfully!").show();
+            new Alert(Alert.AlertType.INFORMATION, "Employee Added Successfully!").show();
             clearFields();
 
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to add customer.").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to add Employee.").show();
 
 
         }
