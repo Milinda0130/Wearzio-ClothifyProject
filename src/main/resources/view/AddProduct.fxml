@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="517.0" prefWidth="533.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddProductController">
+   <children>
+      <ImageView fitHeight="640.0" fitWidth="541.0" layoutY="1.0" opacity="0.22" pickOnBounds="true">
+         <image>
+            <Image url="@../image/addupdate.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="134.0" layoutY="7.0" prefHeight="60.0" prefWidth="262.0" text="Add Product" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddProductName" layoutX="209.0" layoutY="85.0" prefHeight="36.0" prefWidth="272.0" />
+      <JFXButton layoutX="117.0" layoutY="574.0" onAction="#btnSaveProductOnAction" prefHeight="39.0" prefWidth="296.0" style="-fx-background-color: #2B1B17;" text="Save Product" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="55.0" layoutY="91.0" text="Product Name" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="47.0" layoutY="170.0" text="Product Category" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbAddProductCategory" layoutX="209.0" layoutY="155.0" prefHeight="36.0" prefWidth="272.0" promptText="Select Product Category" />
+      <Label layoutX="59.0" layoutY="247.0" text="Product Size" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbAddProductSize" layoutX="208.0" layoutY="232.0" prefHeight="36.0" prefWidth="272.0" promptText="Select product Size" />
+      <TextField fx:id="txtAddProductPrice" layoutX="209.0" layoutY="306.0" prefHeight="36.0" prefWidth="272.0" />
+      <Label layoutX="80.0" layoutY="315.0" text="Price" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddProductQuantityOnHand" layoutX="209.0" layoutY="372.0" prefHeight="36.0" prefWidth="272.0" />
+      <Label layoutX="43.0" layoutY="381.0" text="Quantity  On Hand" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddProductImagePath" layoutX="209.0" layoutY="436.0" prefHeight="36.0" prefWidth="200.0" />
+      <Label layoutX="53.0" layoutY="451.0" text="Product Image" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="436.0" layoutY="507.0" onAction="#btnAddSupplierOnAction" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #2B1B17;" text=" " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="71.0" layoutY="514.0" text="Supplier" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbAddProcutSupplierId" layoutX="209.0" layoutY="505.0" prefHeight="36.0" prefWidth="200.0" promptText="Select Supplier" />
+      <JFXButton layoutX="436.0" layoutY="436.0" onAction="#btnAddProductImageOnAction" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #2B1B17;" text=" " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="20.0" fitWidth="32.0" layoutX="451.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../clothi/src/main/resources/images/AddImageIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="32.0" layoutX="451.0" layoutY="521.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../clothi/src/main/resources/images/PlausIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
