@@ -34,7 +34,7 @@
             <Font name="System" size="16.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtEmaitxtmobille" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="212.0" prefHeight="40.0" prefWidth="360.0" promptText="Mobile Number" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
+      <JFXTextField fx:id="txtMobile" alignment="CENTER" focusColor="#D4A017" layoutX="141.0" layoutY="212.0" prefHeight="40.0" prefWidth="360.0" promptText="Mobile Number" style="-fx-background-color: rgba(230, 215, 199, 0.95); -fx-background-radius: 8; -fx-prompt-text-fill: #A68A64; -fx-text-fill: #2B1B17; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 1, 1);" unFocusColor="#A68A64">
          <font>
             <Font name="System" size="16.0" />
          </font>

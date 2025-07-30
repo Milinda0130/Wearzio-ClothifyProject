@@ -24,7 +24,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public boolean save(CustomerEntity entity) {
-        String query = "INSERT INTO customer (name, mobileNumber, address) VALUES (?,?,?)";
+        String query = "INSERT INTO customer (name, mobile, address) VALUES (?,?,?)";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setString(1, entity.getName());
             statement.setString(2, entity.getMobile());
@@ -38,15 +38,15 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public CustomerEntity search(String id) {
-        String query = "SELECT customerId, name, mobileNumber, address FROM customer WHERE customerId = ?";
+        String query = "SELECT Id, name, mobile, address FROM customer WHERE customerId = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setInt(1, Integer.parseInt(id));
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
                     return new CustomerEntity(
-                            resultSet.getInt("customerId"),
+                            resultSet.getInt("Id"),
                             resultSet.getString("name"),
-                            resultSet.getString("mobileNumber"),
+                            resultSet.getString("mobile"),
                             resultSet.getString("address")
                     );
                 }
@@ -59,7 +59,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public boolean delete(String id) {
-        String query = "DELETE FROM customer WHERE customerId = ?";
+        String query = "DELETE FROM customer WHERE Id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setInt(1, Integer.parseInt(id));
             return statement.executeUpdate() > 0;
@@ -71,7 +71,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public boolean update(CustomerEntity entity) {
-        String query = "UPDATE customer SET name = ?, mobileNumber = ?, address = ? WHERE customerId = ?";
+        String query = "UPDATE customer SET name = ?, mobile = ?, address = ? WHERE Id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setString(1, entity.getName());
             statement.setString(2, entity.getMobile());
@@ -86,15 +86,15 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public List<CustomerEntity> getAll() {
-        String query = "SELECT customerId, name, mobileNumber, address FROM customer";
+        String query = "SELECT Id, name, mobile, address FROM customer";
         List<CustomerEntity> customers = new ArrayList<>();
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
                 customers.add(new CustomerEntity(
-                        resultSet.getInt("customerId"),
+                        resultSet.getInt("id"),
                         resultSet.getString("name"),
-                        resultSet.getString("mobileNumber"),
+                        resultSet.getString("mobile"),
                         resultSet.getString("address")
                 ));
             }

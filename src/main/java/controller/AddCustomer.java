@@ -4,12 +4,16 @@ import com.jfoenix.controls.JFXTextField;
 import dto.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import service.ServiceFactory;
 import service.custom.CustomerService;
 import util.ServiceType;
 
-public class AddCustomer {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AddCustomer implements Initializable {
 
     @FXML
     private JFXTextField txtAddress;
@@ -27,6 +31,7 @@ public class AddCustomer {
 
     @FXML
     void btnAdd(ActionEvent event) {
+
         try {
             // Validation
             if (txtName.getText().trim().isEmpty()) {
@@ -39,8 +44,7 @@ public class AddCustomer {
                 return;
             }
 
-            // For auto-increment ID, you might not need to parse txtid
-            // But if you need it, validate it first
+
             int id = 0;
             if (!txtid.getText().trim().isEmpty()) {
                 id = Integer.parseInt(txtid.getText().trim());
@@ -74,5 +78,10 @@ public class AddCustomer {
         txtName.clear();
         txtMobile.clear();
         txtAddress.clear();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtid.setDisable(true);
     }
 }

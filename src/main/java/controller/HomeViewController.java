@@ -58,7 +58,7 @@ public class HomeViewController implements Initializable {
     @FXML
     void btnEmployeeManagementOnAction(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/ViewCustomer.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ManageEmployeeView.fxml"));
             AnchorPane anchorPane = loader.load();
             panelHome.getChildren().clear();
             panelHome.getChildren().add(anchorPane);
