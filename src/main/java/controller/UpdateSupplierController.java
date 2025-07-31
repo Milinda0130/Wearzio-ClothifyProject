@@ -38,7 +38,7 @@ public class UpdateSupplierController implements Initializable {
     void btnSupplierDelete(ActionEvent event) {
         try {
             if (txtSupplierId.getText().trim().isEmpty()) {
-                new Alert(Alert.AlertType.WARNING, "Please enter Supplier ID!").show();
+                new Alert(Alert.AlertType.WARNING, "Please enter Supplier ID!!").show();
                 return;
             }
 
