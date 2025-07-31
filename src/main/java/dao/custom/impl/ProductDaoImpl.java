@@ -36,14 +36,14 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean save(ProductEntity entity) {
-        String query = "INSERT INTO product (productName, category, size, price, quantity, imageUrl, supplierId) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO product (name, size, price, quantityOnHand , category, image, supplierId) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setString(1, entity.getName());
-            statement.setString(2, entity.getCategory());
-            statement.setString(3, entity.getSize());
-            statement.setDouble(4, entity.getPrice());
-            statement.setInt(5, entity.getQuantityOnHand());
+            statement.setString(2, entity.getSize());
+            statement.setDouble(3, entity.getPrice());
+            statement.setInt(4, entity.getQuantityOnHand());
+            statement.setString(5, entity.getCategory());
             statement.setString(6, entity.getImage());
             statement.setInt(7, entity.getSupplierId());
             return statement.executeUpdate() > 0;
@@ -55,7 +55,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public ProductEntity search(Integer id) {
         try {
-            String query = "SELECT * FROM product WHERE productId = ?";
+            String query = "SELECT * FROM product WHERE id = ?";
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
@@ -81,7 +81,7 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean delete(Integer id) {
-        String query = "DELETE FROM product WHERE productId = ?";
+        String query = "DELETE FROM product WHERE id = ?";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setInt(1, id);
@@ -93,7 +93,7 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean update(ProductEntity entity) {
-        String query = "UPDATE product SET productName = ?, category = ?, size = ?, price = ?, quantity = ?, imageUrl = ?, supplierId = ? WHERE productId = ?";
+        String query = "UPDATE product SET name, category = ?, size = ?, price = ?, quantityOnHand = ?, image = ?, supplierId = ? WHERE id = ?";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setString(1, entity.getName());
@@ -135,7 +135,7 @@ public class ProductDaoImpl implements ProductDao {
         return products;
     }
     public boolean minusQuantity(OrderDetailsEntity entity) {
-        String query = "UPDATE product SET quantity = quantity-? WHERE productId = ?";
+        String query = "UPDATE product SET quantityOnHand = quantityOnHand-? WHERE id ?";
         Connection connection = null;
         try {
             connection = DBConnection.getInstance().getConnection();

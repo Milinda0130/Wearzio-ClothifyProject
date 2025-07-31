@@ -74,6 +74,15 @@ public class HomeViewController implements Initializable {
 
     @FXML
     void btnProcustManagementOnAction(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/ViewProduct.fxml"));
+            AnchorPane anchorPane = loader.load();
+            panelHome.getChildren().clear();
+            panelHome.getChildren().add(anchorPane);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 

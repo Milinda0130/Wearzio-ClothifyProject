@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewProductController">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutY="2.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="240.0" layoutY="45.0" prefHeight="60.0" prefWidth="441.0" text="Product Management">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="641.0" layoutY="209.0" onAction="#btnAddProductOnAction" prefHeight="39.0" prefWidth="191.0" style="-fx-background-color: #2B1B17;" text="Add Product" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="12.0" layoutY="137.0" onAction="#btnSortAllProductsOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="All Produts" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="157.0" layoutY="137.0" onAction="#btnSortGentsOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Gents" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="310.0" layoutY="137.0" onAction="#btnSortLadiesOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Ladies" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="461.0" layoutY="137.0" onAction="#btnSortKidsOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Kids" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="611.0" layoutY="137.0" onAction="#btnSortAccessoriesOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Accessories" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="765.0" layoutY="137.0" onAction="#btnSortFootwareOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Footwear" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtSearchProduct" layoutX="63.0" layoutY="209.0" prefHeight="39.0" prefWidth="421.0" />
+      <JFXButton layoutX="491.0" layoutY="209.0" onAction="#btnSearchProductOnAction" prefHeight="39.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Search" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane fx:id="paneCardView" fitToHeight="false" fitToWidth="true" layoutX="12.0" layoutY="267.0" pannable="true" prefHeight="370.0" prefWidth="893.0" style="-fx-background-color: #e0e0e0;">
+         <content>
+            <FlowPane fx:id="flowPaneProductsManagement" hgap="15" prefWidth="1562.0" style="-fx-background-color: #e0e0e0;" vgap="15" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
