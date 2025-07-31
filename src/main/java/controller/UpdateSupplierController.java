@@ -94,7 +94,7 @@ public class UpdateSupplierController implements Initializable {
             }
 
         } catch (NumberFormatException e) {
-            new Alert(Alert.AlertType.ERROR, "Please enter valid ID number!").show();
+            new Alert(Alert.AlertType.ERROR, "Please enter valid ID number!!").show();
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "An error occurred: " + e.getMessage()).show();
             e.printStackTrace();
