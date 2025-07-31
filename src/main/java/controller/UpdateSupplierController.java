@@ -52,7 +52,7 @@ public class UpdateSupplierController implements Initializable {
                         new Alert(Alert.AlertType.INFORMATION, "Supplier deleted successfully!").show();
                         clearFields();
                     } else {
-                        new Alert(Alert.AlertType.ERROR, "Failed to delete Supplier!").show();
+                        new Alert(Alert.AlertType.ERROR, "Failed to delete Supplier!!").show();
                     }
                 }
             });
