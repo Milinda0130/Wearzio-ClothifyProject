@@ -5,14 +5,16 @@ import db.DBConnection;
 import entity.SupplierEntity;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SupplierDaoImpl implements SuplierDao {
 
     @Override
     public boolean save(SupplierEntity entity) {
-        String query = "INSERT INTO supplier (Name, Company, Email, Item) VALUES (?,?,?,?)";
+        String query = "INSERT INTO supplier (Name, supplierCompany, Email, Item) VALUES (?,?,?,?)";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setString(1, entity.getName());
@@ -32,7 +34,7 @@ public class SupplierDaoImpl implements SuplierDao {
 
     @Override
     public boolean delete(Integer supplierId) {
-        String query = "DELETE FROM supplier WHERE SupplierID = ?";
+        String query = "DELETE FROM supplier WHERE id = ?";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setInt(1, supplierId);
@@ -44,7 +46,7 @@ public class SupplierDaoImpl implements SuplierDao {
 
     @Override
     public boolean update(SupplierEntity entity) {
-        String query = "Update supplier SET Name = ?, Company = ?, Email = ?, Item = ? WHERE SupplierID = ?";
+        String query = "Update supplier SET Name = ?, supplierCompany = ?, Email = ?, Item = ? WHERE id = ?";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setString(1, entity.getName());
@@ -60,6 +62,23 @@ public class SupplierDaoImpl implements SuplierDao {
 
     @Override
     public List<SupplierEntity> getAll() {
-        return List.of();
+        String query = "SELECT * FROM supplier";
+        List<SupplierEntity> suppliers = new ArrayList<>();
+        try {
+            ResultSet resultSet = DBConnection.getInstance().getConnection().createStatement().executeQuery(query);
+            while (resultSet.next()) {
+                SupplierEntity supplier = new SupplierEntity(
+                        resultSet.getInt(1),
+                        resultSet.getString(2),
+                        resultSet.getString(3),
+                        resultSet.getString(4),
+                        resultSet.getString(5)
+                );
+                suppliers.add(supplier);
+            }
+        } catch (SQLException e) {
+            return null;
+        }
+        return suppliers;
     }
 }

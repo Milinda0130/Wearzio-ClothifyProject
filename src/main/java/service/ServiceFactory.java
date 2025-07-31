@@ -1,5 +1,6 @@
 package service;
 
+import service.custom.SupplierService;
 import service.custom.impl.*;
 import util.ServiceType;
 
@@ -22,7 +23,8 @@ public class ServiceFactory {
                 return (T) ProductServiceImpl.getInstance();
             case USER:
                 return (T) LoginSignupServiceImpl.getInstance();
-            // Add other services as needed
+            case SUPPLIER:
+                return (T) SupplierServiceImpl.getInstance();
         }
         return null;
     }

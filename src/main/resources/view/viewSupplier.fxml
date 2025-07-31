@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewSupplierController">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutX="1.0" layoutY="1.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="195.0" layoutY="57.0" prefHeight="60.0" prefWidth="442.0" text="Supplier Management" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="634.0" layoutY="139.0" onAction="#btnAddSupplierOnAction" prefHeight="36.0" prefWidth="191.0" style="-fx-background-color: #2B1B17;" text="Add Supplier" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblSupplier" layoutX="76.0" layoutY="226.0" opacity="0.65" prefHeight="347.0" prefWidth="750.0" style="-fx-control-inner-background: rgba(230, 215, 199, 0.95); -fx-selection-bar: #2B1B17; -fx-selection-bar-text: #E6D7C7; -fx-font-family: 'System'; -fx-font-size: 13; -fx-background-insets: 0; -fx-table-cell-border-color: #2B1B17; -fx-table-header-background: derive(#DEB887, -5%);">
+         <columns>
+            <TableColumn fx:id="colSupplierId" prefWidth="103.99999237060547" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17 #2B1B17 #2B1B17 #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Supplier Id" />
+            <TableColumn fx:id="colSupplierName" prefWidth="157.99998474121094" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Supplier Name" />
+            <TableColumn fx:id="colSupplierCompany" prefWidth="153.33334350585938" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Supplier Company" />
+            <TableColumn fx:id="colSupplierEmail" prefWidth="194.66671752929688" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Supplier Email" />
+            <TableColumn fx:id="colSypplyItem" prefWidth="140.0" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 15; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Item" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

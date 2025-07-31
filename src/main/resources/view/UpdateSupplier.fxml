@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="501.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UpdateSupplierController">
+   <children>
+      <ImageView fitHeight="501.0" fitWidth="523.0" layoutX="-3.0" opacity="0.22" pickOnBounds="true">
+         <image>
+            <Image url="@../image/addupdate.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="98.0" layoutY="25.0" prefHeight="55.0" prefWidth="323.0" text=" Supplier Details" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="44.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplierName" layoutX="199.0" layoutY="128.0" prefHeight="31.0" prefWidth="283.0" />
+      <JFXButton layoutX="272.0" layoutY="407.0" onAction="#btnSupplierDelete" prefHeight="39.0" prefWidth="191.0" style="-fx-background-color: #2B1B17;" text="DELETE" textFill="#ddb06f">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="60.0" layoutY="135.0" text="Supplier Name" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="183.0" text="Company" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplierCompany" layoutX="199.0" layoutY="176.0" prefHeight="31.0" prefWidth="283.0" />
+      <Label layoutX="85.0" layoutY="261.0" text="Email" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSupplierEmail" layoutX="199.0" layoutY="246.0" prefHeight="31.0" prefWidth="283.0" />
+      <ComboBox fx:id="cmbSupplyItem" layoutX="199.0" layoutY="315.0" prefHeight="31.0" prefWidth="283.0" promptText="Select Item Type" />
+      <Label layoutX="85.0" layoutY="322.0" text="Item" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="40.0" layoutY="407.0" onAction="#btnSupplierUpdate" prefHeight="39.0" prefWidth="191.0" style="-fx-background-color: #2B1B17;" text="UPDATE" textFill="#ddb06f">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtSupplierId" layoutX="199.0" layoutY="75.0" prefHeight="31.0" prefWidth="283.0" />
+      <Label layoutX="60.0" layoutY="82.0" text="Supplier ID" textFill="#2b1b17">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
