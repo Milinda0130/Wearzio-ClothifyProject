@@ -93,22 +93,24 @@ public class ProductDaoImpl implements ProductDao {
 
     @Override
     public boolean update(ProductEntity entity) {
-        String query = "UPDATE product SET name, category = ?, size = ?, price = ?, quantityOnHand = ?, image = ?, supplierId = ? WHERE id = ?";
+        String query = "UPDATE product SET name = ?, size = ?, price = ?, quantityOnHand = ?, category = ?, image = ?, supplierId = ? WHERE id = ?";
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
             statement.setString(1, entity.getName());
-            statement.setString(2, entity.getCategory());
-            statement.setString(3, entity.getSize());
-            statement.setDouble(4, entity.getPrice());
-            statement.setInt(5, entity.getQuantityOnHand());
-            statement.setString(6, entity.getImage());
-            statement.setInt(7, entity.getSupplierId());
-            statement.setInt(8, entity.getId());
+            statement.setString(2, entity.getSize());                // ✅ Correct: size
+            statement.setDouble(3, entity.getPrice());               // ✅ Correct: price
+            statement.setInt(4, entity.getQuantityOnHand());         // ✅ Correct: quantityOnHand
+            statement.setString(5, entity.getCategory());            // ✅ Correct: category
+            statement.setString(6, entity.getImage());               // ✅ Correct: image
+            statement.setInt(7, entity.getSupplierId());             // ✅ Correct: supplierId
+            statement.setInt(8, entity.getId());                     // ✅ Correct: WHERE id = ?
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
+            e.printStackTrace(); // Optional: log this
             return false;
         }
     }
+
 
     @Override
     public List<ProductEntity> getAll() {
