@@ -25,6 +25,10 @@ public class ServiceFactory {
                 return (T) LoginSignupServiceImpl.getInstance();
             case SUPPLIER:
                 return (T) SupplierServiceImpl.getInstance();
+            case ORDERS:
+                return (T) OrderServiceImpl.getInstance();
+
+
         }
         return null;
     }
