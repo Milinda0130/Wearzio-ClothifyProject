@@ -45,6 +45,7 @@ public class ViewProductController {
     }
 
     private void loadProductCards(List<Product> products) {
+
         flowPaneProductsManagement.getChildren().clear();
         flowPaneProductsManagement.setHgap(15);
         flowPaneProductsManagement.setVgap(15);

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="955.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="561.0" layoutY="85.0" onAction="#btnSortAllProductsOnAction" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #2B1B17;" text="All Produts" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="126.0" layoutY="85.0" onAction="#btnSortGentsOnAction" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #2B1B17;" text="Gents" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="14.0" layoutY="85.0" onAction="#btnSortLadiesOnAction" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #2B1B17;" text="Ladies" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="346.0" layoutY="85.0" onAction="#btnSortKidsOnAction" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #2B1B17;" text="Kids" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="232.0" layoutY="85.0" onAction="#btnSortAccessoriesOnAction" prefHeight="35.0" prefWidth="97.0" style="-fx-background-color: #2B1B17;" text="Accessories" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <TextField fx:id="txtSearchProduct" layoutX="10.0" layoutY="130.0" prefHeight="39.0" prefWidth="539.0" />
+      <JFXButton layoutX="561.0" layoutY="130.0" onAction="#btnSearchProductOnAction" prefHeight="22.0" prefWidth="97.0" style="-fx-background-color: #2B1B17;" text="Search" textFill="#d2b47f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <ScrollPane fitToHeight="false" fitToWidth="true" layoutX="4.0" layoutY="176.0" pannable="true" prefHeight="469.0" prefWidth="655.0" style="-fx-background-color: #e0e0e0;">
+         <content>
+            <FlowPane fx:id="flowPaneProducts" hgap="15" prefWidth="1088.0" style="-fx-background-color: #e0e0e0;" vgap="15" />
+         </content>
+      </ScrollPane>
+      <AnchorPane fx:id="panePlaceOrder" layoutX="669.0" layoutY="1.0" prefHeight="646.0" prefWidth="279.0">
+         <children>
+            <Label layoutX="69.0" layoutY="10.0" text="Order Id :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblLoadOrderId" layoutX="164.0" layoutY="10.0" prefHeight="27.0" prefWidth="76.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbSelectCustomer" layoutX="30.0" layoutY="59.0" prefHeight="35.0" prefWidth="162.0" promptText="Select Customer" style="-fx-background-color: white;" />
+            <JFXButton layoutX="200.0" layoutY="59.0" onAction="#btnAddNewCustomerOnAction" prefHeight="35.0" prefWidth="34.0" style="-fx-background-color: #2B1B17;" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="11.0" layoutY="480.0" text="Total Amount :">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnPayBill" layoutX="55.0" layoutY="534.0" onAction="#btnPayBillOnAction" prefHeight="27.0" prefWidth="155.0" style="-fx-background-color: #2B1B17;" text=" Pay Bill" textFill="#d2b47f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="txtTotalAmount" layoutX="138.0" layoutY="478.0" prefHeight="35.0" prefWidth="125.0" text=" ">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="24.0" layoutY="107.0" prefHeight="355.0" prefWidth="221.0" style="-fx-background-color: #ffffff;">
+               <content>
+                  <FlowPane fx:id="flowPaneCart" prefHeight="347.0" prefWidth="222.0" style="-fx-background-color: #ffffff;" />
+               </content>
+            </ScrollPane>
+            <ImageView fitHeight="19.0" fitWidth="21.0" layoutX="207.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/PlausIcon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="26.0" layoutY="23.0" prefHeight="27.0" prefWidth="57.0" text="Date : ">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="85.0" layoutY="23.0" text="03/08/2025">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="313.0" layoutY="18.0" prefHeight="29.0" prefWidth="51.0" text="Time :">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="364.0" layoutY="20.0" text="9:44:55 PM">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="452.0" layoutY="85.0" onAction="#btnFootwearOnAction" prefHeight="35.0" prefWidth="92.0" style="-fx-background-color: #2B1B17;" text="Footwear" textFill="#d2b47f">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

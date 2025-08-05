@@ -2,6 +2,7 @@ package dao.custom.impl;
 
 import dao.custom.OrderDao;
 import db.DBConnection;
+import entity.OrderDetailsEntity;
 import entity.OrderEntity;
 
 import java.sql.*;
@@ -35,9 +36,87 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean save(OrderEntity entity) {
-        return false;
-    }
+        Connection connection = null;
+        try {
+            connection = DBConnection.getInstance().getConnection();
+            connection.setAutoCommit(false); // Start transaction
 
+            // Insert order
+            String orderQuery = "INSERT INTO `order` (id, date, price, paymentMethod, userId, customerId) VALUES (?, ?, ?, ?, ?, ?)";
+            try (PreparedStatement orderStmt = connection.prepareStatement(orderQuery)) {
+                orderStmt.setInt(1, entity.getId());
+                orderStmt.setDate(2, entity.getDate());
+                orderStmt.setDouble(3, entity.getPrice());
+                orderStmt.setString(4, entity.getPaymentMethod());
+                orderStmt.setInt(5, entity.getUserId());
+                orderStmt.setInt(6, entity.getCustomerId());
+
+                int orderResult = orderStmt.executeUpdate();
+                if (orderResult == 0) {
+                    connection.rollback();
+                    return false;
+                }
+            }
+
+            // Insert order details manually and update product quantities
+            if (entity.getOrderDetailsList() != null && !entity.getOrderDetailsList().isEmpty()) {
+                String orderDetailsQuery = "INSERT INTO orderdetails (orderId, quantity, productId) VALUES (?, ?, ?)";
+
+                for (OrderDetailsEntity orderDetail : entity.getOrderDetailsList()) {
+                    // Save order detail manually
+                    try (PreparedStatement detailStmt = connection.prepareStatement(orderDetailsQuery)) {
+                        detailStmt.setInt(1, entity.getId()); // Use order ID
+                        detailStmt.setInt(2, orderDetail.getProductId());
+                        detailStmt.setInt(3, orderDetail.getQuantity());
+
+
+
+                        int detailResult = detailStmt.executeUpdate();
+                        if (detailResult == 0) {
+                            connection.rollback();
+                            return false;
+                        }
+                    }
+
+                    // Update product quantity
+                    String updateProductQuery = "UPDATE product SET quantityOnHand = quantityOnHand - ? WHERE productId = ?";
+                    try (PreparedStatement productStmt = connection.prepareStatement(updateProductQuery)) {
+                        productStmt.setInt(1, orderDetail.getQuantity());
+                        productStmt.setInt(2, orderDetail.getProductId());
+
+                        int productResult = productStmt.executeUpdate();
+                        if (productResult == 0) {
+                            connection.rollback();
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            connection.commit(); // Commit transaction
+            return true;
+
+        } catch (SQLException e) {
+            try {
+                if (connection != null) {
+                    connection.rollback();
+                }
+            } catch (SQLException rollbackEx) {
+                System.err.println("Error during rollback: " + rollbackEx.getMessage());
+            }
+            System.err.println("Error saving order: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.setAutoCommit(true); // Reset auto-commit
+                }
+            } catch (SQLException e) {
+                System.err.println("Error resetting auto-commit: " + e.getMessage());
+            }
+        }
+    }
     @Override
     public OrderEntity search(String id) {
         String query = "SELECT * FROM orders WHERE orderId = ?";
@@ -102,8 +181,8 @@ public class OrderDaoImpl implements OrderDao {
     }
     private OrderEntity mapResultSetToOrderEntity(ResultSet resultSet) throws SQLException {
         return new OrderEntity(
-                resultSet.getInt("orderId"),
-                resultSet.getDate("orderDate"),
+                resultSet.getInt("id"),
+                resultSet.getDate("date"),
                 resultSet.getDouble("totalAmount"),
                 resultSet.getString("paymentMethod"),
                 resultSet.getInt("employeeId"),

@@ -51,15 +51,15 @@ public class HomeViewController implements Initializable {
     }
     @FXML
     void btnDashboardOnAction(ActionEvent event) {
+        AnchorPane anchorPane = null;
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
-            AnchorPane anchorPane = loader.load();
+            anchorPane = new FXMLLoader().load(getClass().getResource("../view/Dashboard.fxml"));
             panelHome.getChildren().clear();
             panelHome.getChildren().add(anchorPane);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
         }
-
     }
 
 

@@ -22,14 +22,14 @@ public class OrderDetaislDaoImpl implements OrderDetaisDao {
     }
     @Override
     public boolean save(List<OrderDetailsEntity> orderProductEntities) {
-        String query = "INSERT INTO orderdetails (orderId, productId, quantity) VALUES (?, ?, ?)";
+        String query = "INSERT INTO orderdetails (orderId,quantity,productId) VALUES (?, ?, ?)";
         try {
             Connection connection = DBConnection.getInstance().getConnection();
             PreparedStatement statement = connection.prepareStatement(query);
             for (OrderDetailsEntity entity : orderProductEntities) {
                 statement.setInt(1, entity.getOrderId());
-                statement.setInt(2, entity.getProductId());
-                statement.setInt(3, entity.getQuantity());
+                statement.setInt(2, entity.getQuantity());
+                statement.setInt(3, entity.getProductId());
 
                 if (statement.executeUpdate() <= 0) {
                     return false;
