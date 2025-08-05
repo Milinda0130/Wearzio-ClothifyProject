@@ -58,18 +58,14 @@ public class OrderDaoImpl implements OrderDao {
                 }
             }
 
-            // Insert order details manually and update product quantities
             if (entity.getOrderDetailsList() != null && !entity.getOrderDetailsList().isEmpty()) {
-                String orderDetailsQuery = "INSERT INTO orderdetails (orderId, quantity, productId) VALUES (?, ?, ?)";
+                String orderDetailsQuery = "INSERT INTO orderdetails (orderId, productId, quantity) VALUES (?, ?, ?)";
 
                 for (OrderDetailsEntity orderDetail : entity.getOrderDetailsList()) {
-                    // Save order detail manually
                     try (PreparedStatement detailStmt = connection.prepareStatement(orderDetailsQuery)) {
-                        detailStmt.setInt(1, entity.getId()); // Use order ID
-                        detailStmt.setInt(2, orderDetail.getProductId());
-                        detailStmt.setInt(3, orderDetail.getQuantity());
-
-
+                        detailStmt.setInt(1, entity.getId()); // orderId
+                        detailStmt.setInt(2, orderDetail.getProductId()); // ✅ productId
+                        detailStmt.setInt(3, orderDetail.getQuantity()); // ✅ quantity
 
                         int detailResult = detailStmt.executeUpdate();
                         if (detailResult == 0) {
@@ -78,8 +74,13 @@ public class OrderDaoImpl implements OrderDao {
                         }
                     }
 
-                    // Update product quantity
-                    String updateProductQuery = "UPDATE product SET quantityOnHand = quantityOnHand - ? WHERE productId = ?";
+
+
+
+
+
+                // Update product quantity
+                    String updateProductQuery = "UPDATE product SET quantityOnHand = quantityOnHand - ? WHERE id = ?";
                     try (PreparedStatement productStmt = connection.prepareStatement(updateProductQuery)) {
                         productStmt.setInt(1, orderDetail.getQuantity());
                         productStmt.setInt(2, orderDetail.getProductId());
@@ -119,7 +120,7 @@ public class OrderDaoImpl implements OrderDao {
     }
     @Override
     public OrderEntity search(String id) {
-        String query = "SELECT * FROM orders WHERE orderId = ?";
+        String query = "SELECT * FROM `order` WHERE id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setInt(1, Integer.parseInt(id));
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -135,7 +136,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean delete(String id) {
-        String query = "DELETE FROM orders WHERE orderId = ?";
+        String query = "DELETE FROM `order` WHERE id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setInt(1, Integer.parseInt(id));
             return statement.executeUpdate() > 0;
@@ -145,7 +146,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean update(OrderEntity entity) {
-        String query = "UPDATE orders SET orderDate = ?, totalAmount = ?, paymentMethod = ?, employeeId = ?, customerId = ? WHERE orderId = ?";
+        String query = "UPDATE orders SET orderDate = ?, totalAmount = ?, paymentMethod = ?, employeeId = ?, customerId = ? WHERE id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setDate(1, entity.getDate());
             statement.setDouble(2, entity.getPrice());
@@ -161,7 +162,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<OrderEntity> getAll() {
-        String query = "SELECT orderId, orderDate, totalAmount, paymentMethod, employeeId, customerId FROM orders";
+        String query = "SELECT id, orderDate, totalAmount, paymentMethod, employeeId, customerId FROM `order`";
         List<OrderEntity> orders = new ArrayList<>();
 
         try {
