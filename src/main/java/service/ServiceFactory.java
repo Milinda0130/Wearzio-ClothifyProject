@@ -1,5 +1,6 @@
 package service;
 
+import service.custom.OrderDetailsService;
 import service.custom.SupplierService;
 import service.custom.impl.*;
 import util.ServiceType;
@@ -27,6 +28,8 @@ public class ServiceFactory {
                 return (T) SupplierServiceImpl.getInstance();
             case ORDERS:
                 return (T) OrderServiceImpl.getInstance();
+            case ORDERPRODUCT:
+                return (T) OrderDetailsServiceImpl.getInstance();
 
 
         }

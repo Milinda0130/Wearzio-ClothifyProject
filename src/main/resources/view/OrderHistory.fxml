@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrderHistoryController">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutY="2.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="336.0" layoutY="39.0" prefHeight="60.0" prefWidth="288.0" text="Order History" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearchOrder" layoutX="208.0" layoutY="116.0" prefHeight="48.0" prefWidth="421.0" />
+      <JFXButton layoutX="636.0" layoutY="116.0" onAction="#btnSearchOrderHistory" prefHeight="48.0" prefWidth="117.0" style="-fx-background-color: #2B1B17;" text="Search" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblOrderHistory" layoutX="14.0" layoutY="218.0" prefHeight="405.0" prefWidth="897.0" style="-fx-background-color: #DEB887;">
+         <columns>
+            <TableColumn fx:id="colOrderId" prefWidth="65.99999713897705" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Order Id" />
+            <TableColumn fx:id="colOrderDate" prefWidth="87.3333511352539" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Order Date" />
+            <TableColumn fx:id="colProductName" prefWidth="103.99998474121094" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Product Name" />
+            <TableColumn fx:id="colUnitPrice" minWidth="0.0" prefWidth="83.33334350585938" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Unit Price" />
+            <TableColumn fx:id="colQuantity" minWidth="0.0" prefWidth="69.33334350585938" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Quantity" />
+            <TableColumn fx:id="colTotalAmount" minWidth="0.0" prefWidth="105.3333740234375" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Total Amount" />
+            <TableColumn fx:id="colPaymentType" minWidth="0.0" prefWidth="120.6666259765625" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Payment Type" />
+            <TableColumn fx:id="colCustomerName" minWidth="0.0" prefWidth="126.66668701171875" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Customer Name" />
+            <TableColumn fx:id="colEmployeeName" minWidth="0.0" prefWidth="132.6666259765625" style="-fx-background-color: #DEB887; -fx-alignment: CENTER; -fx-text-fill: #2B1B17; -fx-font-family: 'System Bold'; -fx-font-size: 12; -fx-border-color: #2B1B17; -fx-border-width: 0 1 0 0; -fx-padding: 8; -fx-background-insets: 0; -fx-effect: innershadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Employee Name" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

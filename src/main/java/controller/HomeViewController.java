@@ -105,7 +105,15 @@ public class HomeViewController implements Initializable {
 
     @FXML
     void btnReportsOnAction(ActionEvent event) {
-
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = new FXMLLoader().load(getClass().getResource("../view/Reports.fxml"));
+            panelHome.getChildren().clear();
+            panelHome.getChildren().add(anchorPane);
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML

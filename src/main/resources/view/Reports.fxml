@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportsController">
+
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="925.0" layoutY="1.0" opacity="0.3" pickOnBounds="true">
+         <image>
+            <Image url="@../image/b.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="459.0" layoutX="56.0" layoutY="109.0" opacity="0.87" stroke="#e1e1e1" strokeType="INSIDE" strokeWidth="0.0" width="805.0" />
+      <Label layoutX="346.0" layoutY="20.0" prefHeight="56.0" prefWidth="225.0" text="Reports" textFill="#2b1b17">
+         <font>
+            <Font name="Bodoni MT" size="46.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbSaleSortTime" layoutX="620.0" layoutY="38.0" onAction="#cmbSalesOnAction" opacity="0.67" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" />
+      <JFXButton layoutX="354.0" layoutY="584.0" onAction="#btnSalesReportsOnAction" prefHeight="49.0" prefWidth="225.0" style="-fx-background-color: black;" text="Generate Sales Reports" textFill="#d9ae64">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+      <AreaChart fx:id="chartSales" layoutX="108.0" layoutY="127.0" prefHeight="427.0" prefWidth="704.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </AreaChart>
+   </children>
+</AnchorPane>

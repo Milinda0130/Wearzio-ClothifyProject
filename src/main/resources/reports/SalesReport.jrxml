@@ -1,0 +1,153 @@
+<!-- Created with Jaspersoft Studio -->
+<jasperReport name="AllTimeOrders" language="java" pageWidth="595" pageHeight="842" columnWidth="535"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="40944979-9009-4d2b-8f23-45308e2cf567">
+
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Path"/>
+
+    <query>
+        <queryString language="SQL"><![CDATA[SELECT * FROM `order`]]></queryString>
+    </query>
+
+    <field name="id" class="java.lang.Integer"/>
+    <field name="date" class="java.sql.Date"/>
+    <field name="price" class="java.math.BigDecimal"/>
+    <field name="paymentMethod" class="java.lang.String"/>
+    <field name="userId" class="java.lang.Integer"/>
+    <field name="customerId" class="java.lang.Integer"/>
+
+    <background/>
+
+    <title>
+        <band height="72">
+            <frame mode="Opaque" x="0" y="0" width="555" height="72" backcolor="#750212">
+                <staticText>
+                    <reportElement x="10" y="10" width="150" height="40" forecolor="#FFFFFF" />
+                    <textElement verticalAlignment="Middle" textAlignment="Left">
+                        <font fontName="Bodoni MT" size="36" />
+                    </textElement>
+                    <text><![CDATA[Wearzio]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="300" y="40" width="200" height="20" forecolor="#FFFFFF" />
+                    <textElement textAlignment="Right" verticalAlignment="Middle">
+                        <font size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[All Time - Sales Report]]></text>
+                </staticText>
+            </frame>
+        </band>
+    </title>
+
+    <pageHeader>
+        <band height="10"/>
+    </pageHeader>
+
+    <columnHeader>
+        <band height="20">
+            <line>
+                <reportElement x="0" y="19" width="555" height="1" forecolor="#666666"/>
+            </line>
+            <staticText>
+                <reportElement x="0" y="0" width="70" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[Order Id]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="70" y="0" width="90" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[Order Date]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="160" y="0" width="80" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[Price]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="240" y="0" width="110" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[Payment Method]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="350" y="0" width="60" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[User Id]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="410" y="0" width="80" height="20" backcolor="#E6E6E6" forecolor="#990308" />
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true" size="13"/>
+                </textElement>
+                <text><![CDATA[Customer id]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="25">
+            <line>
+                <reportElement x="0" y="24" width="555" height="1" />
+            </line>
+            <textField>
+                <reportElement x="0" y="0" width="70" height="24"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField pattern="yyyy-MM-dd">
+                <reportElement x="70" y="0" width="90" height="24"/>
+                <textElement verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+            </textField>
+            <textField pattern="#,##0.00">
+                <reportElement x="160" y="0" width="80" height="24"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="240" y="0" width="110" height="24"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{paymentMethod}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="0" width="60" height="24"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{userId}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="410" y="0" width="80" height="24"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[$F{customerId}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <pageFooter>
+        <band height="20">
+            <textField>
+                <reportElement x="0" y="5" width="515" height="15" backcolor="#E6E6E6" />
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER} + " of"]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="515" y="5" width="40" height="15" backcolor="#E6E6E6" />
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="0" y="0" width="150" height="15" />
+                <textElement verticalAlignment="Middle" />
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+
+</jasperReport>
