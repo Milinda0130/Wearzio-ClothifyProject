@@ -38,7 +38,7 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public CustomerEntity search(String id) {
-        String query = "SELECT Id, name, mobile, address FROM customer WHERE customerId = ?";
+        String query = "SELECT Id, name, mobile, address FROM customer WHERE id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setInt(1, Integer.parseInt(id));
             try (ResultSet resultSet = statement.executeQuery()) {

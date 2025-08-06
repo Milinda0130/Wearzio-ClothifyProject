@@ -38,6 +38,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println(orderDetails+"huththa");
         return orderDetails;
     }
 }

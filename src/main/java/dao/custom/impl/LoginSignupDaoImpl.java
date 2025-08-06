@@ -77,7 +77,7 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
                 if (resultSet2.next()) {
                     return new UserEntity(
                             resultSet2.getInt("userId"),
-                            resultSet2.getString("name"),
+                            resultSet2.getString("userName"),
                             resultSet2.getString("email"),
                             "xxxxx",
                             resultSet2.getString("role")
@@ -92,7 +92,7 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
 
     @Override
     public UserEntity getUserById(int id) {
-        String query = "SELECT * FROM user WHERE userId = ?";
+        String query = "SELECT * FROM user WHERE userID = ?";
 
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
@@ -102,7 +102,7 @@ public class LoginSignupDaoImpl implements LoginSignUpDao {
             if (resultSet.next()) {
                 return new UserEntity(
                         resultSet.getInt("userId"),
-                        resultSet.getString("name"),
+                        resultSet.getString("userName"),
                         resultSet.getString("email"),
                         "xxxxx",
                         resultSet.getString("role")

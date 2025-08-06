@@ -21,15 +21,15 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public int getLastOrderId() {
-        String query = "SELECT orderId FROM orders ORDER BY orderId DESC LIMIT 1";
+        String query = "SELECT id FROM `order` ORDER BY id DESC LIMIT 1";
         try (
                 Statement stmt = DBConnection.getInstance().getConnection().createStatement();
                 ResultSet resultSet = stmt.executeQuery(query)) {
             if (resultSet.next()) {
-                return resultSet.getInt("orderId");
+                return resultSet.getInt("id");
             }
         } catch (SQLException e) {
-            throw new RuntimeException("Error fetching last OrderID", e);
+            throw new RuntimeException("Error fetching last iD", e);
         }
         return -1;
     }
@@ -146,7 +146,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public boolean update(OrderEntity entity) {
-        String query = "UPDATE orders SET orderDate = ?, totalAmount = ?, paymentMethod = ?, employeeId = ?, customerId = ? WHERE id = ?";
+        String query = "UPDATE `order` SET date = ?, price = ?, paymentMethod = ?, userId = ?, customerId = ? WHERE id = ?";
         try (PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query)) {
             statement.setDate(1, entity.getDate());
             statement.setDouble(2, entity.getPrice());
@@ -162,7 +162,7 @@ public class OrderDaoImpl implements OrderDao {
 
     @Override
     public List<OrderEntity> getAll() {
-        String query = "SELECT id, orderDate, totalAmount, paymentMethod, employeeId, customerId FROM `order`";
+        String query = "SELECT id, date, price, paymentMethod, userId, customerId FROM `order`";
         List<OrderEntity> orders = new ArrayList<>();
 
         try {
@@ -184,9 +184,9 @@ public class OrderDaoImpl implements OrderDao {
         return new OrderEntity(
                 resultSet.getInt("id"),
                 resultSet.getDate("date"),
-                resultSet.getDouble("totalAmount"),
+                resultSet.getDouble("price"),
                 resultSet.getString("paymentMethod"),
-                resultSet.getInt("employeeId"),
+                resultSet.getInt("userId"),
                 resultSet.getInt("customerId"),
                 List.of()
         );

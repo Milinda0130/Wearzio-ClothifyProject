@@ -78,6 +78,15 @@ public class HomeViewController implements Initializable {
     @FXML
     void btnOrderManagementOnAction(ActionEvent event) {
 
+        AnchorPane anchorPane = null;
+        try {
+            anchorPane = new FXMLLoader().load(getClass().getResource("../view/OrderHistory.fxml"));
+            panelHome.getChildren().clear();
+            panelHome.getChildren().add(anchorPane);
+        } catch (
+                IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
