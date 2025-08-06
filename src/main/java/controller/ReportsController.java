@@ -22,6 +22,7 @@ import service.custom.OrderService;
 import service.custom.ProductService;
 import util.ServiceType;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -76,7 +77,7 @@ public class ReportsController implements Initializable {
 
     @FXML
     void btnSalesReportsOnAction(ActionEvent event) {
-        generateReport("..SalesReport.jrxml");
+//        generateReport("SalesReport.jrxml");
     }
 
     private void loadAllSalesChart() {
@@ -129,9 +130,22 @@ public class ReportsController implements Initializable {
 
     private void generateReport(String reportFileName) {
         try {
-            JasperDesign design = JRXmlLoader.load("C:/Users/USER/Documents/Icet_project/Fx/colthify-final-project/wearzio-javaFx/src/main/resources/reports/" + reportFileName);
+            // Corrected path: absolute path from classpath root
+            InputStream reportStream = getClass().getResourceAsStream("/reports/" + reportFileName);
+
+            // Handle missing resource
+            if (reportStream == null) {
+                System.err.println("Report file not found: /reports/" + reportFileName);
+                return;
+            }
+
+            JasperDesign design = JRXmlLoader.load(reportStream);
             JasperReport jasperReport = JasperCompileManager.compileReport(design);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+            JasperPrint jasperPrint = JasperFillManager.fillReport(
+                    jasperReport,
+                    null,
+                    DBConnection.getInstance().getConnection()
+            );
             JasperViewer.viewReport(jasperPrint, false);
         } catch (JRException | SQLException e) {
             e.printStackTrace();

@@ -27,7 +27,7 @@
          </font>
       </Label>
       <ComboBox fx:id="cmbSaleSortTime" layoutX="620.0" layoutY="38.0" onAction="#cmbSalesOnAction" opacity="0.67" prefHeight="38.0" prefWidth="171.0" style="-fx-background-color: white;" />
-      <JFXButton layoutX="354.0" layoutY="584.0" onAction="#btnSalesReportsOnAction" prefHeight="49.0" prefWidth="225.0" style="-fx-background-color: black;" text="Generate Sales Reports" textFill="#d9ae64">
+      <JFXButton layoutX="354.0" layoutY="584.0" onAction="#btnSalesReportsOnAction" prefHeight="49.0" prefWidth="225.0" style="-fx-background-color: black;" text="Generate Report" textFill="#d9ae64">
          <font>
             <Font size="14.0" />
          </font>
